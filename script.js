@@ -1,129 +1,32 @@
-// Fix Mobile Button Issue 
-document.querySelector('.btn-mobile').addEventListener('click', function () {
-    const pendingTask = getTextValueById('pending-task');
-    const completedTask = getTextValueById('completed-task');
-    const totalCompletedTask = completedTask + 1;
-    const remainTask = pendingTask - 1;
-    document.getElementById('completed-task').innerText = totalCompletedTask;
-    document.getElementById('pending-task').innerText = remainTask;
-    alert('Board Updated Successfully');
-    const mobileText = getTextById('mobile-text');
-    const newHistory = document.querySelector('.new-history');
-    const newDiv = document.createElement('div');
-    newDiv.innerHTML = `
-    <div class="bg-[#3752FD33] px-2 py-3 rounded-md">
-    <p class="text-sm">You have Complete The Task: ${mobileText} ${getFormattedTime()}</p> </div>
-    `;
-    newHistory.appendChild(newDiv);
+// General function to handle task completion
+function completeTask(buttonClass, textId) {
+    document.querySelector(buttonClass).addEventListener('click', function () {
+        const pendingTask = getTextValueById('pending-task');
+        const completedTask = getTextValueById('completed-task');
+        document.getElementById('completed-task').innerText = completedTask + 1;
+        document.getElementById('pending-task').innerText = pendingTask - 1;
+        alert('Board Updated Successfully');
+        
+        const taskText = getTextById(textId);
+        const newHistory = document.querySelector('.new-history');
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML = `
+        <div class="bg-[#3752FD33] px-2 py-3 rounded-md">
+            <p class="text-sm">You have completed the task: ${taskText} ${getFormattedTime()}</p> 
+        </div>`;
+        newHistory.appendChild(newDiv);
+    });
+}
 
-})
+// Assign event listeners to buttons
+completeTask('.btn-mobile', 'mobile-text');
+completeTask('.btn-dark', 'dark-text');
+completeTask('.btn-optimize', 'optimize-text');
+completeTask('.btn-emoji', 'emoji-text');
+completeTask('.btn-ai', 'ai-text');
+completeTask('.btn-job', 'job-text');
 
-// Add Dark Mode 
-document.querySelector('.btn-dark').addEventListener('click', function () {
-    const pendingTask = getTextValueById('pending-task');
-    const completedTask = getTextValueById('completed-task');
-    const totalCompletedTask = completedTask + 1;
-    const remainTask = pendingTask - 1;
-    document.getElementById('completed-task').innerText = totalCompletedTask;
-    document.getElementById('pending-task').innerText = remainTask;
-    alert('Board Updated Successfully');
-    const darkText = getTextById('dark-text');
-    const newHistory = document.querySelector('.new-history');
-    const newDiv = document.createElement('div');
-    newDiv.innerHTML = `
-    <div class="bg-[#3752FD33] px-2 py-3 rounded-md">
-    <p class="text-sm">You have Complete The Task: ${darkText} ${getFormattedTime()}</p> </div>
-    `;
-    newHistory.appendChild(newDiv);
-})
-
-
-// Optimize Home page 
-document.querySelector('.btn-optimize').addEventListener('click', function () {
-    const pendingTask = getTextValueById('pending-task');
-    const completedTask = getTextValueById('completed-task');
-    const totalCompletedTask = completedTask + 1;
-    const remainTask = pendingTask - 1;
-    document.getElementById('completed-task').innerText = totalCompletedTask;
-    document.getElementById('pending-task').innerText = remainTask;
-    alert('Board Updated Successfully');
-    const optimizeText = getTextById('optimize-text');
-    const newHistory = document.querySelector('.new-history');
-    const newDiv = document.createElement('div');
-    newDiv.innerHTML = `
-    <div class="bg-[#3752FD33] px-2 py-3 rounded-md">
-    <p class="text-sm">You have Complete The Task: ${optimizeText} ${getFormattedTime()}</p> </div>
-    `;
-    newHistory.appendChild(newDiv);
-})
-
-
-// Add new emoji 🤲 
-document.querySelector('.btn-emoji').addEventListener('click', function () {
-    const pendingTask = getTextValueById('pending-task');
-    const completedTask = getTextValueById('completed-task');
-    const totalCompletedTask = completedTask + 1;
-    const remainTask = pendingTask - 1;
-    document.getElementById('completed-task').innerText = totalCompletedTask;
-    document.getElementById('pending-task').innerText = remainTask;
-    alert('Board Updated Successfully');
-    const emojiText = getTextById('emoji-text');
-    const newHistory = document.querySelector('.new-history');
-    const newDiv = document.createElement('div');
-    newDiv.innerHTML = `
-    <div class="bg-[#3752FD33] px-2 py-3 rounded-md">
-    <p class="text-sm">You have Complete The Task: ${emojiText} ${getFormattedTime()}</p> </div>
-    `;
-    newHistory.appendChild(newDiv);
-})
-
-// Integrate OpenAI API 
-document.querySelector('.btn-ai').addEventListener('click', function () {
-    const pendingTask = getTextValueById('pending-task');
-    const completedTask = getTextValueById('completed-task');
-    const totalCompletedTask = completedTask + 1;
-    const remainTask = pendingTask - 1;
-    document.getElementById('completed-task').innerText = totalCompletedTask;
-    document.getElementById('pending-task').innerText = remainTask;
-    alert('Board Updated Successfully');
-    const aiText = getTextById('ai-text');
-    const newHistory = document.querySelector('.new-history');
-    const newDiv = document.createElement('div');
-    newDiv.innerHTML = `
-    <div class="bg-[#3752FD33] px-2 py-3 rounded-md">
-    <p class="text-sm">You have Complete The Task: ${aiText} ${getFormattedTime()}</p> </div>
-    `;
-    newHistory.appendChild(newDiv);
-})
-
-// Improve Job Seeking 
-document.querySelector('.btn-job').addEventListener('click', function () {
-    const pendingTask = getTextValueById('pending-task');
-    const completedTask = getTextValueById('completed-task');
-    const totalCompletedTask = completedTask + 1;
-    const remainTask = pendingTask - 1;
-    document.getElementById('completed-task').innerText = totalCompletedTask;
-    document.getElementById('pending-task').innerText = remainTask;
-    alert('Board Updated Successfully');
-    const jobText = getTextById('job-text');
-    const newHistory = document.querySelector('.new-history');
-    const newDiv = document.createElement('div');
-    newDiv.innerHTML = `
-    <div class="bg-[#3752FD33] px-2 py-3 rounded-md">
-    <p class="text-sm">You have Complete The Task: ${jobText} ${getFormattedTime()}</p> </div>
-    `;
-    newHistory.appendChild(newDiv);
-
-})
-
-// Final Alert 
-document.querySelector('.btn-mobile').addEventListener('click', taskCompleted);
-document.querySelector('.btn-dark').addEventListener('click', taskCompleted);
-document.querySelector('.btn-optimize').addEventListener('click', taskCompleted);
-document.querySelector('.btn-emoji').addEventListener('click', taskCompleted);
-document.querySelector('.btn-ai').addEventListener('click', taskCompleted);
-document.querySelector('.btn-job').addEventListener('click', taskCompleted);
-
+// Track completed tasks
 let taskCount = 0;
 function taskCompleted() {
     taskCount++;
@@ -132,17 +35,18 @@ function taskCompleted() {
     }
 }
 
+// Attach task completion event
+['.btn-mobile', '.btn-dark', '.btn-optimize', '.btn-emoji', '.btn-ai', '.btn-job'].forEach(selector => {
+    document.querySelector(selector).addEventListener('click', taskCompleted);
+});
 
-
-
-
-// Change random background color 
+// Change random background color
 function changeBgColor() {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     document.getElementById("body").style.backgroundColor = randomColor;
 }
 
-// Auto day and Date Update
+// Auto update date
 function updateDate() {
     const today = new Date();
     const options = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
@@ -152,7 +56,7 @@ function updateDate() {
 }
 updateDate();
 
-// Times format hours minutes seconds
+// Get formatted time
 function getFormattedTime() {
     const now = new Date();
     let hours = now.getHours();
@@ -163,30 +67,28 @@ function getFormattedTime() {
     return `at ${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")} ${amAndPm}`;
 }
 
-// disable buttons (One time Use)
+// Disable buttons after one-time use
 function disableButton(button) {
     button.disabled = true;
     button.classList.add("bg-gray-400", "cursor-not-allowed");
 }
 
-// converted number 
+// Convert inner text to number
 function getTextValueById(id) {
-    const textValue = document.getElementById(id).innerText;
-    const convertedTextValue = parseInt(textValue);
-    return convertedTextValue;
+    return parseInt(document.getElementById(id).innerText);
 }
 
-//  Get Just inner text 
+// Get inner text
 function getTextById(id) {
-    const onlyText = document.getElementById(id).innerText;
-    return onlyText;
+    return document.getElementById(id).innerText;
 }
-// Clear History 
+
+// Clear history
 function clearHistory() {
     document.getElementById("logContainer").innerHTML = "";
 }
 
-// Linked in blog pages 
+// Navigate to LinkedIn blog pages
 document.getElementById('discover').addEventListener('click', function () {
-    window.location.href = 'blog.html'
-})
+    window.location.href = 'blog.html';
+});
