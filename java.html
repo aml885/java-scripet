@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="main-body" class="bg-[#EAF0FF] min-h-screen font-sans">
+
+    <!-- Navigation Bar -->
+    <header class="py-4 container mx-auto">
+        <nav class="flex justify-between items-center bg-white shadow-md px-6 py-3 rounded-lg">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-3">
+                <img class="w-10" src="A5-Dev-Board/assets/logo.png" alt="site-logo">
+                <h3 class="text-2xl font-bold text-[#123456]">Code<span class="text-[#3752FD]">Board</span></h3>
+            </div>
+            <!-- Button Section -->
+            <div>
+                <a href="index.html"><button class="px-4 py-2 bg-[#2835FA] text-white rounded-lg hover:bg-[#1a2bcc]">Go Home</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-6">
+        <h2 class="text-center text-3xl font-extrabold text-[#2835FA]">Explore Our Blog</h2>
+        <section class="mt-5 space-y-6">
+            <!-- Question Box -->
+            <div class="bg-white p-5 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-[#2835FA]">1. How to select elements in the DOM?</h3>
+                <hr class="border-dashed border-gray-400 my-3">
+                <p class="text-gray-700">আইডি ব্যবহার করে নির্বাচন করা → নির্দিষ্ট আইডি অনুযায়ী এলিমেন্ট নির্বাচন করা যায়।
+                    ক্লাস ব্যবহার করে নির্বাচন করা → নির্দিষ্ট ক্লাস অনুযায়ী একাধিক এলিমেন্ট নির্বাচন করা যায়।
+                    ট্যাগ ব্যবহার করে নির্বাচন করা → নির্দিষ্ট ট্যাগ অনুযায়ী এলিমেন্ট খোঁজা যায়।
+                    CSS সিলেক্টর ব্যবহার করে নির্বাচন করা → নির্দিষ্ট সিলেক্টরের মাধ্যমে প্রথম মিল থাকা এলিমেন্ট রিটার্ন করা হয়।
+                    CSS সিলেক্টর ব্যবহার করে সব মিল থাকা এলিমেন্ট নির্বাচন করা → নির্দিষ্ট সিলেক্টরের সব মিল থাকা এলিমেন্টের তালিকা রিটার্ন করা হয়। </p>
+            </div>
+            <!-- More Questions -->
+            <div class="bg-white p-5 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-[#2835FA]">2. Difference between innerHTML, innerText, and textContent?</h3>
+                <hr class="border-dashed border-gray-400 my-3">
+                <p class="text-gray-700">এটি HTML ট্যাগসহ সম্পূর্ণ কনটেন্ট নেয় বা পরিবর্তন করে।
+                    এটি শুধুমাত্র দৃশ্যমান লেখা নেয় বা পরিবর্তন করে, লুকানো লেখা উপেক্ষা করে।
+                    এটি HTML ট্যাগ ছাড়া সম্পূর্ণ লেখা নেয়, এমনকি লুকানো থাকলেও।</p>
+            </div>
+            <div class="bg-white p-5 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-[#2835FA]">3. What is event delegation in the DOM?</h3>
+                <hr class="border-dashed border-gray-400 my-3">
+                <p class="text-gray-700">ইভেন্ট ডেলিগেশন হলো একটি কৌশল যেখানে শিশু এলিমেন্টগুলোর জন্য আলাদা ইভেন্ট যোগ না করে প্যারেন্ট এলিমেন্টে ইভেন্ট যোগ করা হয়।
+                    এটি ইভেন্ট বাবলিং ব্যবহার করে, যেখানে ইভেন্ট নিচ থেকে ওপরের দিকে ছড়িয়ে পড়ে।
+                    এটি পারফরম্যান্স বাড়ায় এবং কম এলিমেন্টে ইভেন্ট হ্যান্ডলিং করতে সাহায্য করে।</p>
+            </div>
+            <div class="bg-white p-5 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-[#2835FA]">4. What is event bubbling in the DOM?</h3>
+                <hr class="border-dashed border-gray-400 my-3">
+                <p class="text-gray-700">ইভেন্ট বাবলিং হলো একটি প্রসেস যেখানে কোনো ইভেন্ট প্রথমে টার্গেট এলিমেন্টে ঘটে এবং তারপর তার প্যারেন্ট এলিমেন্টের দিকে উপরের দিকে ছড়িয়ে পড়ে।
+                    এটি ডিফল্টভাবে কাজ করে এবং প্যারেন্ট এলিমেন্টে ইভেন্ট শোনার সুবিধা দেয়।
+                    ইভেন্ট বাবলিং ব্যবহার করে একটি প্যারেন্ট এলিমেন্টের মাধ্যমে অনেক চাইল্ড এলিমেন্টের ইভেন্ট হ্যান্ডেল করা যায়।</p>
+            </div>
+            <div class="bg-white p-5 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-[#2835FA]">5. How do you create, add, and remove elements using JavaScript?</h3>
+                <hr class="border-dashed border-gray-400 my-3">
+                <p class="text-gray-700">জাভাস্ক্রিপ্ট দিয়ে নতুন HTML উপাদান তৈরি করা যায় document.createElement() ফাংশন ব্যবহার করে।
+                    তৈরি করা উপাদানটি DOM-এ যোগ করতে appendChild() বা append() ফাংশন ব্যবহার করা হয়।
+                    একটি উপাদান মুছে ফেলার জন্য remove() বা removeChild() ব্যবহার করা হয়।</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
